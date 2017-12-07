@@ -1,0 +1,348 @@
+
+    p {
+        text-align: left;
+    }
+    a:link {
+        color: rgb(51, 103, 214);
+        text-decoration: none;
+    }
+    /*去下划线*/
+
+    a:visited {
+        color: rgb(51, 103, 214);
+    }
+
+    a:hover {
+        cursor: pointer;
+    }
+    /*鼠标样式*/
+
+    a:active {
+        color: rgb( 5, 37, 119);
+    }
+
+    html,
+    button,
+    input,
+    select,
+    textarea,
+    .pure-g [class *="pure-u"] {
+        /* 字体栈写在这: */
+        font-family: Roboto, 'Segoe UI', Arial, 'Microsoft Yahei', sans-serif;
+    }
+
+    html {
+        text-align: center;
+        background: rgb(241, 241, 241);
+        color: #FBFBFB;
+        font-weight: 500;
+        font-size: 1.17em;
+    }
+
+    .top {
+        z-index: 2;
+        position: fixed;
+        width: 100%;
+        height: 3em;
+        background: black;
+        opacity: 0.86;
+        font-weight: 300;
+        color: rgb(241, 241, 241);
+    }
+
+    a.top-a:link {
+        color: white;
+        text-decoration: none;
+    }
+    /*去下划线*/
+
+    a.top-a:visited {
+        color: white;
+    }
+
+    a.top-a:active {
+        color: rgb( 175, 175, 175);
+    }
+
+    .top-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+    }
+    /* 背景 */
+
+    .cont-background {
+        background: url('imgs/104.Matrix.png') no-repeat top;
+        background-size: 457px;
+    }
+    /* 评论 */
+
+    #id-comment-text,
+    #id-comment-okay,
+    .message {
+        margin: 0.4em auto;
+    }
+
+    .message {
+        text-align: justify;
+    }
+
+    #id-comment-okay {
+        text-align: right;
+        margin: 0 auto 1.41em auto;
+    }
+
+    .message-cont {
+        border: 0;
+        border-top: 0.1em;
+        border-style: solid;
+        padding: 0.5em 0 2em 0;
+    }
+
+    .message-name {
+        border-top-right-radius: 14px;
+        color: rgb(155, 155, 155);
+        background: rgb(34, 34, 34);
+    }
+
+
+    /* 横屏 大于 1000px */
+
+    @media only screen and (min-width: 64em) {
+        .top-center {
+            width: 80%;
+        }
+        .HomeWork,
+        .resume,
+        .resume-contact,
+        #id-comment-text,
+        #id-comment-okay,
+        .message {
+            margin: 0 auto;
+            width: 80%;
+        }
+        .BGM {
+            margin: 0 auto;
+            width: 40%;
+        }
+    }
+    /* 横屏 小于 1000px */
+
+    @media only screen and (max-width: 64em) and (orientation: landscape) {
+        #id-notes,
+        #id-homework {
+            display: none;
+        }
+        #id-home,
+        #id-github,
+        #id-resume {
+            width: 33.3333%;
+        }
+        html {
+            font-size: 110%;
+        }
+        .BGM,
+        .HomeWork,
+        .resume,
+        .resume-contact,
+        #id-comment-text,
+        #id-comment-okay,
+        .message {
+            margin: 0 auto;
+            width: 95%;
+        }
+    }
+    /* 竖屏 小于 1000px */
+
+    @media only screen and (max-width: 64em) and (orientation: portrait) {
+        #id-notes,
+        #id-homework {
+            display: none;
+        }
+        #id-home,
+        #id-github,
+        #id-resume {
+            width: 33.3333%;
+        }
+        html {
+            font-size: 110%;
+        }
+        .BGM,
+        .HomeWork,
+        .resume,
+        .resume-contact,
+        #id-comment-text,
+        #id-comment-okay,
+        .message {
+            margin: 0 auto;
+            width: 95%;
+        }
+    }
+
+
+
+
+
+
+    .pure-form-stacked input[type="text"],
+    .pure-form-stacked input[type="password"],
+    .pure-form-stacked textarea {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .resume {
+        text-align: justify;
+        font-weight: 500;
+        color: black;
+    }
+
+
+    .playing {
+        color: #FBFBFB;
+    }
+    .playing:hover {
+        color: rgb(104, 104, 104);
+    }
+    #id-BGM,
+    #id-BGM-range {
+        margin: 0.8em auto;
+    }
+    #id-BGM-volume {
+        width: 40%;
+        margin: 0.3em auto auto;
+    }
+    #id-BGM-name {
+        color: #FBFBFB;
+font-size: 1.5em;
+font-weight: bold;
+margin: 0.3em auto;
+    }
+    music {
+        display: inline-block;
+        padding: 0.2em 0 0.2em 0;
+    }
+    music:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+
+
+
+
+
+    .slider {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        background: #565656;
+        height: 7px;
+        box-shadow: 0 1px 0px rgba(255, 255, 255, 0.25), inset 0 0 4px rgba(0, 0, 0, 0.9);
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+    }
+
+    .slider div.ui-slider-range {
+        display: block;
+        height: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        -moz-transition-property: background-color;
+        -o-transition-property: background-color;
+        -webkit-transition-property: background-color;
+        transition-property: background-color;
+        -moz-transition-duration: 100ms;
+        -o-transition-duration: 100ms;
+        -webkit-transition-duration: 100ms;
+        transition-duration: 100ms;
+    }
+
+    .slider.red div.ui-slider-range {
+        background-color: #e69e9b;
+        box-shadow: inset 0 0 4px rgba(163, 18, 0, 0.7), inset 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider.red div.ui-slider-range.hilite,
+    .slider.red div.ui-slider-range.dragging {
+        background-color: #ffa09b;
+    }
+
+    .slider.blue div.ui-slider-range {
+        background-color: #9FD0E9;
+        box-shadow: inset 0 0 4px rgba(0, 85, 151, 0.8), inset 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider.blue div.ui-slider-range.hilite,
+    .slider.blue div.ui-slider-range.dragging {
+        background-color: #9fd5ff;
+    }
+
+    .slider.green div.ui-slider-range {
+        background-color: #9edbbc;
+        box-shadow: inset 0 0 4px rgba(19, 121, 72, 0.8), inset 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider.green div.ui-slider-range.hilite,
+    .slider.green div.ui-slider-range.dragging {
+        background-color: #9ee7c2;
+    }
+
+    .slider.black div.ui-slider-range {
+        background-color: #aaaaaa;
+        box-shadow: inset 0 0 4px rgba(24, 24, 24, 0.8), inset 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider.black div.ui-slider-range.hilite,
+    .slider.black div.ui-slider-range.dragging {
+        background-color: #bbbbbb;
+    }
+
+    .slider.white div.ui-slider-range {
+        background-color: #e3e3e3;
+        box-shadow: inset 0 0 4px rgba(88, 88, 88, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider.white div.ui-slider-range.hilite,
+    .slider.white div.ui-slider-range.dragging {
+        background-color: #f0f0f0;
+    }
+
+    .slider a.ui-slider-handle {
+        position: absolute;
+        top: -5px;
+        margin-left: -9px;
+        z-index: 1;
+        height: 16px;
+        width: 16px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        background-color: #d4d4d4;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        border: 0px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4), inset 0 0px 1px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.6), 0 4px 2px rgba(0, 0, 0, 0.2), 0 9px 4px rgba(0, 0, 0, 0.1), inset 0 2px 1px white;
+        outline: none;
+    }
+
+    .slider a.ui-slider-handle:after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: -1px;
+        top: -4px;
+        background-color: none;
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        background-image: -moz-radial-gradient(#ffffff, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+        background-image: -webkit-radial-gradient(#ffffff, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+        background-image: radial-gradient(#ffffff, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    }

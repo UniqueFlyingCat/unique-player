@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>unique-player</title>
+    <link rel="stylesheet" href="files/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="files/Pure-css/pure-min.css">
+    <link rel="stylesheet" href="files/Pure-mobile.css">
+    <link rel="stylesheet" href="files/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="files/Animate.css">
+    <link rel="stylesheet" href="files/player.css">
+</head>
+<body>
+  <div id="container">
+	<div id="player" class="BGM">
+        <img src="files/1.jpg">
+		<div class="cover ">
+            <div class="works"><h2>Unique - Player</h2></div>
+            <audio id="id-BGM" data-id=0 src="music/0.mp3" autoplay="autoplay"></audio>
+            <!-- 歌曲信息 -->
+            <div id="id-BGM-name">歌曲名</div>
+            <div id="id-BGM-artist">艺术家</div>
+            <!-- 列表 -->
+            <div id="id-BGM-mList"></div>
+            <!-- 进度条 -->
+            <div class="slider green" id="id-BGM-range" title="进度调节"></div>
+            <!-- 00:00 / 00:00 -->
+            <span id="id-BGM-now" style="display: inline-block;float: left;">00:00</span>
+            <span id="id-BGM-end" style="display: inline-block;float: right;">00:00</span>
+			<div class="controls">
+				<button id="id-BGM-order"  title="顺序播放">
+                    <i id="id-BGM-order-how" class="fa fa-retweet fa-lg"></i>
+                </button>
+				<button id="id-BGM-last" title="上一首">
+                    <i class="fa fa-backward fa-2x"></i>
+                </button>
+				<button id="id-BGM-play" title="播放/暂停" >
+                    <i class="fa fa-play fa-3x"></i>
+                </button>
+				<button id="id-BGM-next" title="下一首">
+                    <i class="fa fa-forward fa-2x"></i>
+                </button>
+				<button id="id-BGM-random"  title="随机播放">
+                    <i  id="id-BGM-random-how" style="color:#2FBAC0" class="fa fa-random fa-lg"></i>
+                </button>
+                <!-- 音量 -->
+                <div class="slider white" id="id-BGM-volume" title="音量调节"></div>
+				<!-- <input id="volume" name="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" /> -->
+			</div>
+		</div>
+	</div>
+</div>
+  <!-- <script src="js/index.js"></script> -->
+  <script src="files/jQuery.js"></script>
+  <script src="files/jQuery-ui.js"></script>
+  <script src="files/player.js"></script>
+</body>
+</html>
