@@ -1,52 +1,43 @@
 var mList = [{
         id: '0',
+        wyid: '452613551',
         type: 'mp3',
-        name: 'Abi',
-        artist: 'Abitude'
+        name: 'Despacito',
+        artist: 'Luis Fonsi/Daddy Yankee'
     }, {
         id: '1',
+        wyid: '34040716',
         type: 'mp3',
         name: 'Visions',
         artist: 'Acreix'
     }, {
         id: '2',
+        wyid: '29717271',
         type: 'mp3',
         name: 'Go_Time-Mark',
         artist: 'Mark_Petrie'
     }, {
         id: '3',
+        wyid:'26289183',
         type: 'mp3',
         name: '加州旅馆',
         artist: 'Eagles'
     }, {
         id: '4',
+        wyid:'27566759',
         type: 'mp3',
         name: '闷',
         artist: '王菲'
     }, ]
 var music = function(mList, button) {
-    // var style = ` <!-- 播放器样式 -->
-    //     `
-    // var html = `<!-- 播放器 -->
-    //     `
-    // $('.HomeWork').append(html)
-    // $('.HomeWork').append(style)
     $('#id-BGM')[0].pause()
     $(mList).each(function(i, e) {
-            var src = `music/${e.id}.${e.type}`
+            var src = `http://music.163.com/song/media/outer/url?id=${e.wyid}.${e.type}`
             var name = `${e.name} - ${e.artist}`
             var temp = `<div><music data-id=${e.id} data-src=${src} >${name}</music></div>`
             $('#id-BGM-mList').append(temp)
         })
     // 初始化 歌单
-    // $(button).on('click', function(event) {
-    //     var music = document.querySelector('#id-BGM')
-    //     if (music.paused) {
-    //         music.play()
-    //     } else {
-    //         music.pause()
-    //     }
-    // })
     $('#id-BGM').on('pause', function() {
         var play = $($('#id-BGM-play').children()[0])
         play.removeClass("fa-pause-circle")
@@ -159,7 +150,7 @@ var music = function(mList, button) {
         $(mList).each( function(i ,e) {
             if (Number(e.id) === id) {
                 var player = $("#id-BGM")[0]
-                player.src = `music/${id}.${e.type}`
+                player.src = `http://music.163.com/song/media/outer/url?id=${e.wyid}.${e.type}`
                 player.dataset.id = id
             }
         })
@@ -178,7 +169,7 @@ var music = function(mList, button) {
         $(mList).each( function(i ,e) {
             if (Number(e.id) === id) {
                 var player = $("#id-BGM")[0]
-                player.src = `music/${id}.${e.type}`
+                player.src = `http://music.163.com/song/media/outer/url?id=${e.wyid}.${e.type}`
                 player.dataset.id = id
             }
         })
@@ -191,29 +182,27 @@ var music = function(mList, button) {
     })
     // 播放 上一曲
     $('#id-BGM-random').on('click', function(){
-         var obj1 = document.getElementById("id-BGM-random-how")
+         var obj1 = $("#id-BGM-random-how")[0]
          obj1.setAttribute("style","color:#2FBAC0")
-         var obj2 = document.getElementById("id-BGM-order-how")
+         var obj2 = $("#id-BGM-order-how")[0]
          obj2.setAttribute("style","")
     })
     $('#id-BGM-order').on('click', function(){
-        var obj1 = document.getElementById("id-BGM-order-how")
+        var obj1 = $("#id-BGM-order-how")[0]
         obj1.setAttribute("style","color:#2FBAC0")
-        var obj2 = document.getElementById("id-BGM-random-how")
+        var obj2 = $("#id-BGM-random-how")[0]
         obj2.setAttribute("style","")
     })
     //切换顺序按钮
         $('#id-BGM').on('ended', function(event , index) {
             var player = $("#id-BGM")[0]
             var all = mList.length
-            var obj1 = document.getElementById("id-BGM-random-how")
+            var obj1 = $("#id-BGM-random-how")[0]
             if (obj1.style.color === "rgb(47, 186, 192)") {
-                console.log(1);
                 var old = player.dataset.id
                 var id  = Math.floor(Math.random() * mList.length)
                 // 随机播放
             }else {
-                console.log(2);
                 var old = Number(player.dataset.id) + all
                 var id  = (old + 1) % all
                 // 循环播放
@@ -227,31 +216,30 @@ var music = function(mList, button) {
                 }
             })
         })
+        //判断随机播放或者顺序播放
+        $( document ).ready(function() {
+          function createHoverState (myobject){
+            myobject.hover(function() {
+              $(this).prev().toggleClass('hilite');
+            });
+            myobject.mousedown(function() {
+              $(this).prev().addClass('dragging');
+              $("*").mouseup(function() {
+                $(myobject).prev().removeClass('dragging');
+              });
+            });
+          }
+          $(".slider").slider({
+            orientation: "horizontal",
+            range: "min",
+            max: 100,
+            value: 0,
+            animate: 1300
+          })
+          createHoverState($(".slider a.ui-slider-handle"))
+          $("#id-BGM-volume").slider("value", 25)
+        })
+        //进度条滑动样式
 
 }
 music(mList, '#id-home')
-
-
-// 背景音乐
-$( document ).ready(function() {
-  function createHoverState (myobject){
-    myobject.hover(function() {
-      $(this).prev().toggleClass('hilite');
-    });
-    myobject.mousedown(function() {
-      $(this).prev().addClass('dragging');
-      $("*").mouseup(function() {
-        $(myobject).prev().removeClass('dragging');
-      });
-    });
-  }
-  $(".slider").slider({
-    orientation: "horizontal",
-    range: "min",
-    max: 100,
-    value: 0,
-    animate: 1300
-  })
-  createHoverState($(".slider a.ui-slider-handle"))
-  $("#id-BGM-volume").slider("value", 25)
-})
