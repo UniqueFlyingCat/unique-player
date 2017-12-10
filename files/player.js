@@ -14,7 +14,7 @@ var mList = [{
         id: '2',
         wyid: '29717271',
         type: 'mp3',
-        name: 'Go_Time-Mark',
+        name: 'Go_Time',
         artist: 'Mark_Petrie'
     }, {
         id: '3',
@@ -209,7 +209,7 @@ var music = function(mList, button) {
             }
             $(mList).each( function(i ,e) {
                 if (Number(e.id) === id) {
-                    player.src = `music/${id}.${e.type}`
+                    player.src = `http://music.163.com/song/media/outer/url?id=${e.wyid}.${e.type}`
                     player.dataset.id = id
                     $('#id-BGM-name').text(e.name)
                     $('#id-BGM-artist').text(e.artist)
